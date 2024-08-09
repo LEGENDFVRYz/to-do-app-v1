@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import React from 'react';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
 import { savingData, readData, formatTime, formatDate } from './components/helperFunctions';
