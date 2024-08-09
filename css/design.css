@@ -1,0 +1,232 @@
+html {
+  overflow: hidden !important;
+}
+
+body {
+  padding-top: 55px !important; /* Adjust the value based on your navbar height */
+}
+
+nav {
+  position: fixed;
+  height: 3.5rem;
+  display: flex;
+  width: 100%;
+  top: 0;
+  text-align: center;
+  background-color: #003366; /* Ensure the nav itself has a solid background color */
+  z-index: 1030; /* Ensure the nav stays on top of other elements */
+  /* Handle the collapse menu */
+  /* Ensure the navbar-toggler has a solid background when collapsed */
+}
+nav .container-fluid {
+  justify-content: center; /* Center the content horizontally */
+  max-width: 70rem;
+  padding: 0;
+}
+nav .container-fluid a.navbar-brand {
+  padding-left: 2.5em;
+  color: white; /* Ensure the text is visible */
+}
+nav .container-fluid a.navbar-brand:hover {
+  color: #ddd; /* Optional: Slight hover effect */
+}
+nav .container-fluid button.navbar-toggler {
+  margin-right: 2.5em;
+  background-color: #471467; /* Color for the toggle button */
+}
+nav .container-fluid #navbarSupportedContent {
+  background-color: #471467; /* Color for the toggle button */
+  padding: 0;
+  margin: 0;
+}
+nav .container-fluid a {
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the links */
+  user-select: none; /* Prevents the text from being selected */
+  -webkit-user-select: none; /* Prevents text selection in Safari */
+  -moz-user-select: none; /* Prevents text selection in Firefox */
+  -ms-user-select: none; /* Prevents text selection in Internet Explorer/Edge */
+  color: white; /* Ensure the text is visible on dark background */
+}
+nav .container-fluid .nav-item {
+  padding: 0em 0.4em;
+  margin: 0.2em;
+}
+nav .container-fluid .nav-item:hover {
+  background-color: rgb(27, 18, 83);
+  border-radius: 0.75em;
+}
+nav .container-fluid .nav-item.active {
+  background-color: #4d84ab;
+  border-radius: 0.75em;
+}
+nav .navbar-collapse {
+  background-color: #003366;
+  padding: 1rem;
+  /* Make sure nav links have appropriate styling inside the collapse */
+}
+nav .navbar-collapse .nav-link {
+  color: white;
+}
+nav .navbar-collapse .nav-link:hover {
+  color: #ddd;
+}
+nav .navbar-toggler {
+  background-color: #00509e; /* Color for the toggle button */
+}
+
+div.main-wrap .row main {
+  background-color: #0cbaba;
+  background-image: linear-gradient(360deg, #032222 0%, #f0451f 65%);
+  padding: 0em 1em;
+  padding-bottom: 0;
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height for the parent */
+  overflow-y: auto;
+}
+div.main-wrap .row main div.row {
+  max-width: 62rem;
+  margin: 0 auto;
+}
+div.main-wrap .row main div.row div.content-box {
+  margin: 1em 0;
+  color: white;
+}
+div.main-wrap .row main div.row div.content-box h1 {
+  font-size: 3.25em;
+}
+div.main-wrap .row main div.row div.content-box p {
+  text-indent: 2em;
+  text-align: justify;
+}
+div.main-wrap .row main div.row div.btn-box {
+  margin: 1em 0em;
+  margin-top: 0;
+  margin-bottom: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.main-wrap .row main div.row div.btn-box button {
+  color: white;
+  padding: 0.6em 3.5em;
+  font-weight: bold;
+  border: 0.15em solid #471467;
+  background-color: #471467;
+}
+div.main-wrap .row main div.row div.btn-box button:hover {
+  background-color: #581880;
+}
+div.main-wrap .row main div.row2 {
+  padding: 0.5em 2em;
+}
+div.main-wrap .row main div.row2 div.task-card {
+  margin: 0.5em 0em;
+  margin-bottom: 1em;
+  padding: 1em 2em;
+  width: 100%;
+  background-color: #FF7F4D;
+  color: white;
+  border-radius: 0.8em;
+}
+div.main-wrap .row main div.row2 div.task-card div {
+  padding: 0;
+  margin: 0;
+}
+div.main-wrap .row main div.row2 div.task-card .row-config {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+div.main-wrap .row main div.row2 div.task-card .row-config h3 {
+  margin: 0.25em 0em;
+}
+div.main-wrap .row main div.row2 div.task-card .row-config h6 {
+  font-weight: lighter;
+  margin: 0em;
+  margin-top: 0.25em;
+}
+div.main-wrap .row main div.row2 div.task-card .row-config .card-menu {
+  align-items: flex-end;
+}
+div.main-wrap .row main div.row2 div.task-card .row-config .card-menu button {
+  padding: 0.5em;
+  margin: 0em 0.1em;
+  width: 3em;
+  height: 3em;
+  border: 0.1em;
+}
+div.main-wrap .row main div.row2 div.task-card .row-config .card-menu button i {
+  font-size: 1.25em;
+}
+div.main-wrap .row main div.row2 div.task-card .row-config .card-menu button:hover {
+  color: white;
+  background: #F4512C;
+}
+div.main-wrap .row main div.row2 div.task-card .footer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+div.main-wrap .row main div.row2 div.task-card .footer .left {
+  align-items: flex-start;
+}
+div.main-wrap .row main div.row2 div.task-card .footer .left div.due {
+  margin: auto 0em;
+  padding: 0;
+  width: -moz-max-content;
+  width: max-content;
+}
+div.main-wrap .row main div.row2 div.task-card .footer .left div.due h6 {
+  margin: auto 1em;
+  padding: auto 0em;
+}
+div.main-wrap .row main div.row2 div.task-card .footer .left div.priority-tag {
+  background-color: #471467;
+  border-radius: 0.5em;
+  margin: 0;
+  padding: 0.25em;
+  width: 6em;
+  text-align: center;
+}
+div.main-wrap .row main div.task-box {
+  padding-top: 1.5em;
+  padding-bottom: 55px;
+  width: 100%;
+  background-color: #DDFFF7;
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+div.main-wrap .row main div.task-box div.task-menu {
+  margin: 0;
+  padding: 1em 2em;
+  padding-top: 0.75em;
+  background-color: #DDFFF7;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  box-shadow: 0px 20px 29px -28px rgba(0, 0, 0, 0.56);
+  text-align: center;
+}
+div.main-wrap .row main div.task-box div.task-menu button {
+  color: #032222;
+  padding: 0.4em 1.5em;
+  font-weight: bold;
+  border: 0.1em solid black;
+}
+div.main-wrap .row main div.task-box div.task-menu button:hover {
+  color: white;
+  border: 0.1em solid #471467;
+}
+div.main-wrap .row main div.task-box div.task-wrap {
+  padding-top: 1em;
+  flex-direction: column;
+  z-index: 1;
+}/*# sourceMappingURL=design.css.map */

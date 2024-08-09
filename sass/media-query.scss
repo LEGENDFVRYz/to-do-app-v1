@@ -1,0 +1,69 @@
+// XXL Screen (min-width: 1400px)
+@media (min-width: 1400px) {    
+    /* XXL */
+    div.main-wrap {
+        .row {
+            aside {
+                display: block;
+            }
+        }
+    }
+}
+
+// XL Screen (max-width: 800px)
+@media (max-width: 800px) {
+    /* XL */
+    main {
+        .row {
+            .content-box {
+                p {
+                    text-align: center !important;
+                    font-size: 1.2em !important;
+
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .task-menu {
+        text-align: start !important;
+
+        button {
+            span {
+                display: none;
+            }
+        }
+    }
+
+    h1.fw-bold.text-center {
+        font-size: 2.75em !important; /* Smaller font size for tablets */
+    }
+
+    .task-box{
+        padding: 0.5em;
+    }
+}
+
+// Further adjust font size when screen width is 480px or less
+@media (max-width: 480px) {
+    h1.fw-bold.text-center {
+        font-size: 1.25em !important; /* Even smaller font size for mobile devices */
+    }
+
+    main {
+        .row {
+            .content-box {
+                p {
+                    padding: 0em 0.5em !important;
+                    font-size: 0.75em !important;
+                    text-align: justify !important;
+                }
+            }
+        }
+    }
+
+
+}

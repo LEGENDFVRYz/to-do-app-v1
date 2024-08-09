@@ -1,0 +1,20 @@
+// Customizing variables
+//$primary: #5E1B89;
+
+// Import functions and variables
+@import '../node_modules/bootstrap/scss/_functions';
+@import '../node_modules/bootstrap/scss/_variables';
+
+$custom-colors: (
+    "dark-orange": #F4512C,
+    "light-orange": #FF7F4D,
+    "dark-blue": #471467,
+    "light-blue": #9D71BC,
+    "alt-black": #181818,
+    "alt-white": #F8FFFE
+);
+
+$theme-colors: map-merge($custom-colors, $theme-colors);
+
+// Import bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap';

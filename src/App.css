@@ -1,0 +1,13 @@
+/* Other css media quaries */
+html{
+    overflow: hidden !important;    
+}
+body{
+    padding-top: 55px !important; /* Adjust the value based on your navbar height */
+}
+.nav{
+    color: white;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: white !important;
+}
