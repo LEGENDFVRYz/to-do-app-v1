@@ -216,10 +216,10 @@ div.main-wrap .row main div.task-box div.task-menu {
   text-align: center;
 }
 div.main-wrap .row main div.task-box div.task-menu button {
-  color: #032222;
+  color: #4F4F4F;
   padding: 0.4em 1.5em;
   font-weight: bold;
-  border: 0.1em solid black;
+  border: 0.1em solid #4F4F4F;
 }
 div.main-wrap .row main div.task-box div.task-menu button:hover {
   color: white;

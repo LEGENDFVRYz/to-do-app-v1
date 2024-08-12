@@ -1,20 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export default function TaskCard({title, priority, dueDate, dueTime, type, keyId, isFinished, deleteFunc, checkFunc, timeLeft, timePassed, onEditClick}) {
+export default function TaskCard({ title, priority, dueDate, dueTime, type, keyId, isFinished, deleteFunc, checkFunc, timeLeft, timePassed, onEditClick }) {
 
-  // // Function: manipulating style if the task is done
-  // const [isClicked, setIsClicked] = useState(false);
-
-  // const isDoneToggle = () => {
-  //   setIsClicked((prevIsClicked) => {
-  //     const newIsClicked = !prevIsClicked;
-  //     const isFinished = newIsClicked; 
-  //     // console.log(isFinished); 
-  //     return newIsClicked;
-  //   });
-  // };
-
-  // Function: for changing style when finished
   const finishedStyle = {
     opacity: isFinished ? '60%' : '100%',
     textDecoration: isFinished ? 'line-through' : 'none',
@@ -26,9 +13,15 @@ export default function TaskCard({title, priority, dueDate, dueTime, type, keyId
         <div className="row-config d-flex flex-row">
           <h3>{title}</h3>
           <div className="card-menu">
-            <button type="button" class="btn btn-light-orange" onClick={() => checkFunc(keyId)}><i class="bi bi-check-circle"></i></button>
-            <button type="button" class="btn btn-light-orange" onClick={() => deleteFunc(keyId)}><i class="bi bi-trash3"></i></button>
-            <button type="button" class="btn btn-light-orange" data-bs-toggle="modal" data-bs-target="#m-task-form" onClick={() => onEditClick(keyId)} ><i class="bi bi-pencil"></i></button>
+            <button type="button" className="btn btn-light-orange" onClick={() => checkFunc(keyId)}>
+              <i className="bi bi-check-circle"></i>
+            </button>
+            <button type="button" className="btn btn-light-orange" data-bs-toggle="modal" data-bs-target="#deleteSelectionModal" onClick={() => deleteFunc(keyId)}>
+              <i className="bi bi-trash3"></i>
+            </button> 
+            <button type="button" className="btn btn-light-orange" data-bs-toggle="modal" data-bs-target="#m-task-form" onClick={() => onEditClick(keyId)}>
+              <i className="bi bi-pencil"></i>
+            </button>
           </div>
         </div>
 
@@ -38,7 +31,7 @@ export default function TaskCard({title, priority, dueDate, dueTime, type, keyId
         </div>
       </div>
 
-      <hr /> 
+      <hr />
 
       <div className="footer d-flex flex-row">
         <div className='left d-flex flex-row'>
@@ -47,7 +40,6 @@ export default function TaskCard({title, priority, dueDate, dueTime, type, keyId
         </div>
         <div className="due-left">{timeLeft}</div>
       </div>
-
     </div>
-  )
+  );
 }

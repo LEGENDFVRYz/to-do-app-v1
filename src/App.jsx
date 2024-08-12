@@ -77,6 +77,11 @@ function App() {
     setSelectedTaskId(null); // Clear selected task after editing
   };
 
+  // Task Delete Selections
+  const [selectedKeyId, setSelectedKeyId] = useState(null);
+  const handleDeleteClick = (keyId) => {
+    setSelectedKeyId(keyId);
+  };
 
   const deleteTask = (target_id) => {
     setDataList((prevList) => {
@@ -84,6 +89,7 @@ function App() {
       savingData("dataList", newList);                     // Update the data in the Local Storage
       return newList;
     });
+    setSelectedKeyId(null);
     // console.log(dataList)
   };
 
@@ -282,7 +288,7 @@ function App() {
                         type={task.type} 
                         keyId={task.id}
                         isFinished={task.isFinished}
-                        deleteFunc={deleteTask}
+                        deleteFunc={handleDeleteClick}
                         checkFunc={isDone}
                         timeLeft={<TimeLeft dueDate={task.due_date} dueTime={task.due_time}/>}
                         timePassed={<TimePassed dateTime={task.date_posted}
@@ -304,24 +310,6 @@ function App() {
       )}
 
       {/* Modal: For alerts and notice */}
-      <div className="modal" id="exampleModal">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title">Modal title</h5>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div className="modal-body">
-              <p>Modal body text goes here.</p>
-            </div>
-            <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div className="modal fade" id="deleteConfirmationModal" tabIndex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
@@ -334,7 +322,25 @@ function App() {
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-              <button type="button" className="btn btn-danger" id="confirmDelete" data-bs-dismiss="modal" onClick={deleteAll}>Delete</button>
+              <button type="button" className="btn btn-danger" id="confirmDelete" data-bs-dismiss="modal" onClick={deleteAll}>Delete All</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="modal fade" id="deleteSelectionModal" tabIndex="-1" aria-labelledby="deleteSelectionModalLabel" aria-hidden="true">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="deleteSelectionModalLabel">Confirm Deletion</h5>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div className="modal-body">
+              Are you sure you want to delete this data? This action cannot be undone.
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" className="btn btn-danger" id="confirmDelete" data-bs-dismiss="modal" onClick={() => deleteTask(selectedKeyId)}>Delete Task</button>
             </div>
           </div>
         </div>
