@@ -64,6 +64,15 @@ const AddTaskForm = ({ onData }) => {
             onData(tempData);  // Send updated data to the onData callback
             // console.log(tempList);  
             closeModal(); // Close the modal if success
+
+            setTempData({
+                task_title: "",
+                priority: "",
+                due_date: "",
+                due_time: "",
+                date_posted: new Date(),
+                type: "One-Time Task"
+            });           // Reset data
         } else {
             console.log("Cannot proceed: Some of the inputs are missing");
             setAlertTrigger(true);
